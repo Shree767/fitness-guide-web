@@ -3,13 +3,15 @@ import { config } from "dotenv";
 import cors from "cors";
 import { sendEmail } from "./utils/sendEmail.js";
 
+config();
+
 const app = express();
 
-config();
+const PORT = process.env.PORT || 10000;
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    origin: process.env.FRONTEND_URL || "*",
     methods: ["GET", "POST"],
   })
 );
@@ -47,6 +49,6 @@ app.post("/send/mail", async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server listening on port ${process.env.PORT}`);
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
 });
