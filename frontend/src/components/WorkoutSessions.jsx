@@ -2,7 +2,7 @@ import React from 'react'
 
 const WorkoutSession = () => {
   return (
-    <section className="workout_session">
+    <section style={{ padding: "0 90px" }} className="workout_session">
     <div className="wrapper">
       <h1>WORKOUT CATEGORIES</h1>
       <p>
